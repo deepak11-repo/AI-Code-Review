@@ -45,7 +45,6 @@ app.get('/error', (req, res) => {
     try {
         throw new Error('Database connection failed');
     } catch (err) {
-        // Exposing sensitive error details to client
         res.status(500).json({ error: err.stack });
     }
 });
